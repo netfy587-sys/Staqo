@@ -1,0 +1,179 @@
+<!-- STAKORA LANDING PAGE (v2): paste into an Elementor "HTML" widget -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap');
+.stkr{--bg:#fff;--soft:#fff1f3;--ink:#1a1426;--mut:#5f5670;--dark:#14111f;--coral:#ff5d73;--amb:#ffb347;--line:#f0dde1;--card:#fff;background:var(--bg);color:var(--ink);font:400 17px/1.7 Figtree,system-ui,sans-serif}
+@media(prefers-color-scheme:dark){.stkr{--bg:#100d1a;--soft:#1a1428;--ink:#f4eefa;--mut:#b7abc9;--line:#2e2540;--card:#1a1428}}
+.stkr *,.stkr *::before,.stkr *::after{box-sizing:border-box}
+.stkr h1,.stkr h2,.stkr h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;line-height:1.1;margin:0 0 .5em;color:var(--ink);letter-spacing:-.01em}
+.stkr h1{font-size:clamp(2.4rem,6vw,4.2rem)}.stkr h2{font-size:clamp(1.8rem,3.8vw,2.7rem)}.stkr h3{font-size:1.25rem}
+.stkr p{margin:0 0 1em}.stkr a{color:inherit}
+.stkr .w{max-width:1100px;margin:0 auto;padding:0 20px}
+.stkr .bar{display:flex;align-items:center;justify-content:space-between;height:70px}
+.stkr .logo{font:800 1.6rem 'Bricolage Grotesque',sans-serif;text-decoration:none;color:#fff}.stkr .logo b{background:linear-gradient(90deg,var(--coral),var(--amb));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stkr nav{display:flex;gap:24px}.stkr nav a{color:#d9cfe8;text-decoration:none;font-weight:500;font-size:.95rem}
+@media(max-width:760px){.stkr nav{display:none}}
+.stkr .hero{background:var(--dark);color:#fff;padding-bottom:70px}
+.stkr .hg{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding-top:34px}
+.stkr .hero h1{color:#fff}.stkr .hero p{color:#d9cfe8;font-size:1.15rem}
+.stkr .kick{color:var(--amb);font-weight:700;margin-bottom:12px}
+.stkr .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.stkr .chips span{border:1px solid #4a3f66;border-radius:99px;padding:7px 16px;font-size:.92rem;color:#fff;background:#1f1a33}
+.stkr svg{width:100%;height:auto;display:block}
+@media(max-width:860px){.stkr .hg,.stkr .zz{grid-template-columns:1fr!important}}
+.stkr section{padding:80px 0}.stkr .soft{background:var(--soft)}
+.stkr .blend{background:linear-gradient(90deg,var(--coral),var(--amb));color:#1a0d10;text-align:center;padding:34px 20px}
+.stkr .blend h2{color:#1a0d10;margin:0;max-width:24ch;margin:0 auto}
+.stkr .zz{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px}
+.stkr .zz:last-child{margin-bottom:0}.stkr .zz.r .img{order:2}
+.stkr .img{background:var(--soft);border-radius:24px;padding:26px}
+.stkr .zz p{color:var(--mut)}
+.stkr .tag{display:inline-block;font-weight:700;color:var(--coral);margin-bottom:8px}
+.stkr .head{max-width:720px;margin-bottom:32px}.stkr .head p{color:var(--mut)}
+.stkr .list{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.stkr .list div{padding:18px 0;border-top:1px solid var(--line)}.stkr .list p{margin:0;color:var(--mut)}
+@media(max-width:760px){.stkr .list{grid-template-columns:1fr}}
+.stkr .cols{display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:start}
+@media(max-width:860px){.stkr .cols{grid-template-columns:1fr}}
+.stkr .art h3{margin-top:1.5em}.stkr .art .m{color:var(--mut);margin-bottom:6px}
+.stkr .side{background:var(--dark);color:#fff;border-radius:24px;padding:28px}
+.stkr .side h3{color:var(--amb)}.stkr .side ul{padding-left:1.1em;margin:0;color:#d9cfe8}.stkr .side li{margin-bottom:.7em}
+.stkr .dd{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+@media(max-width:760px){.stkr .dd{grid-template-columns:1fr}}
+.stkr .dd div{border-radius:20px;padding:24px}.stkr .dd .do{background:#e6f7ee;color:#0f3a25}.stkr .dd .dont{background:#ffe6ea;color:#4a1420}
+.stkr .dd h3{color:inherit}.stkr .dd ul{margin:0;padding-left:1.1em}.stkr .dd li{margin-bottom:.5em}
+.stkr .tw{overflow-x:auto}.stkr table{width:100%;border-collapse:collapse;font-size:.97rem}
+.stkr th,.stkr td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.stkr th{font-family:'Bricolage Grotesque',sans-serif;color:var(--coral)}
+.stkr footer{background:var(--dark);color:#b7abc9;padding:26px 0;font-size:.9rem}
+.stkr footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.stkr .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stkr .st{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 10px 30px rgba(20,17,31,.06)}
+.stkr .st p{margin:0;color:var(--mut)}.stkr .st h3{margin-top:14px}
+.stkr .n{display:inline-flex;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--amb));color:#1a0d10;font:800 1rem 'Bricolage Grotesque',sans-serif;align-items:center;justify-content:center}
+.stkr .st.tk{background:var(--dark);border-color:var(--dark)}.stkr .st.tk h3{color:var(--amb);margin-top:0}.stkr .st.tk ul{margin:0;padding-left:1.1em;color:#d9cfe8}.stkr .st.tk li{margin-bottom:.6em}
+.stkr .sc4{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.stkr .sc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px}
+.stkr .sc p{margin:0 0 .7em;color:var(--mut)}.stkr .sc .go{background:#e6f7ee;color:#0f3a25;border-radius:12px;padding:10px 14px;margin:0}
+.stkr .head .m{color:var(--coral);font-weight:700;margin-bottom:6px}
+@media(max-width:900px){.stkr .steps{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.stkr .steps,.stkr .sc4{grid-template-columns:1fr}}
+.stkr .c{text-align:center;margin-left:auto;margin-right:auto}
+.stkr .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stkr .tri div{background:var(--soft);border-radius:24px;padding:28px}
+.stkr .tri b{font-size:2rem;display:block;margin-bottom:8px}.stkr .tri p{margin:0;color:var(--mut)}
+.stkr .faq{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start}
+.stkr .fq p{color:var(--mut)}
+.stkr details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin-bottom:12px}
+.stkr summary{cursor:pointer;font:700 1.1rem 'Bricolage Grotesque',sans-serif}
+.stkr details p{margin:10px 0 0;color:var(--mut)}
+.stkr .cta{background:linear-gradient(90deg,var(--coral),var(--amb));text-align:center}
+.stkr .cta h2,.stkr .cta p{color:#1a0d10;margin-left:auto;margin-right:auto}
+.stkr .cta h2{max-width:20ch}.stkr .cta p{max-width:56ch}.stkr .cta .lm{font-weight:800;margin-bottom:0}
+@media(max-width:860px){.stkr .tri,.stkr .faq{grid-template-columns:1fr}}
+</style>
+
+<div class="stkr" id="top">
+<div class="hero">
+<div class="w bar"><a class="logo" href="#top">Staqo<b>.</b></a>
+<nav><a href="#pillars">Why us</a><a href="#guide">Safety guide</a><a href="#threats">Scam checker</a><a href="#faq">FAQ</a></nav></div>
+<div class="w hg">
+<div>
+<div class="kick">✨ Creating a Magical Atmosphere</div>
+<h1>Staqo: fun, safe and secure online adventures 🛡️</h1>
+<p>Designed for dreamers, built for doers. Explore the internet with confidence, anytime, anywhere, anything.</p>
+<p>Click today and unlock exclusive benefits.</p>
+<div class="chips"><span>🌐 Online Adventures Platform</span><span>🎉 Incredible Fun And More</span><span>🔒 Safe &amp; Secure</span></div>
+</div>
+<svg viewBox="0 0 480 400" role="img" aria-label="A phone with a glowing shield and check mark">
+<defs><linearGradient id="stkrG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5d73"/><stop offset="1" stop-color="#ffb347"/></linearGradient></defs>
+<circle cx="240" cy="200" r="170" fill="#ff5d73" opacity=".12"/><circle cx="240" cy="200" r="120" fill="#ffb347" opacity=".12"/>
+<rect x="150" y="40" width="180" height="320" rx="30" fill="#221b38" stroke="#4a3f66" stroke-width="4"/><rect x="215" y="52" width="50" height="8" rx="4" fill="#4a3f66"/>
+<path d="M240 100 L300 122 V200 C300 245 270 275 240 292 C210 275 180 245 180 200 V122Z" fill="url(#stkrG)"/>
+<path d="M212 195 l20 20 l38 -42" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#fff"><circle cx="70" cy="80" r="4"/><circle cx="420" cy="120" r="3"/><circle cx="400" cy="320" r="4"/><circle cx="60" cy="300" r="3"/></g>
+
+</svg>
+</div></div></div>
+
+<div class="blend"><h2>Discover the perfect blend of quality and value.</h2></div>
+
+<section id="pillars"><div class="w">
+<div class="head"><h2>Because you deserve something truly special ✨</h2><p>More than a product, it's a lifestyle. Three promises sit at the heart of everything we build.</p></div>
+<div class="zz">
+<div class="img"><svg viewBox="0 0 400 240" role="img" aria-label="Balloons and stars"><rect width="400" height="240" rx="18" fill="#ffd9de"/><circle cx="110" cy="100" r="42" fill="#ff5d73"/><circle cx="200" cy="80" r="50" fill="#ffb347"/><circle cx="292" cy="106" r="40" fill="#8a5cf6"/><path d="M110 142v60M200 130v72M292 146v56" stroke="#5f5670" stroke-width="3"/><g fill="#fff"><circle cx="60" cy="40" r="4"/><circle cx="340" cy="44" r="4"/><circle cx="200" cy="210" r="4"/></g></svg></div>
+<div><span class="tag">🎉 Promise one</span><h3>Incredible Fun And More</h3><p>Games, challenges, live events and friendly communities make every visit feel fresh. Try it out today and you'll never be disappointed.</p><p>Join thousands already making the switch.</p></div>
+</div>
+<div class="zz r">
+<div class="img"><svg viewBox="0 0 400 240" role="img" aria-label="A lock inside a shield"><rect width="400" height="240" rx="18" fill="#d9f2e4"/><path d="M200 30 L280 58 V120 C280 165 240 195 200 212 C160 195 120 165 120 120 V58Z" fill="#0f7a4a"/><rect x="172" y="104" width="56" height="44" rx="8" fill="#fff"/><path d="M184 104v-14a16 16 0 0 1 32 0v14" stroke="#fff" stroke-width="8" fill="none"/></svg></div>
+<div><span class="tag">🔒 Promise two</span><h3>Safe &amp; Secure</h3><p>Your data is protected with encryption, two-step sign-in and clear privacy controls. Experience excellence without compromise.</p><p>Small changes create big impacts, and our safety guide below shows exactly how.</p></div>
+</div>
+<div class="zz">
+<div class="img"><svg viewBox="0 0 400 240" role="img" aria-label="Sunrise over mountains"><rect width="400" height="240" rx="18" fill="#ffe9c9"/><circle cx="270" cy="100" r="40" fill="#ff5d73"/><path d="M0 200 L100 100 L170 170 L250 90 L340 180 L400 140 V240 H0Z" fill="#3b2a5c"/><path d="M0 220 L120 160 L220 220 L320 150 L400 210 V240 H0Z" fill="#221b38"/></svg></div>
+<div><span class="tag">🌄 Promise three</span><h3>Breathtaking Experience</h3><p>Rich visuals, smooth performance and thoughtful design turn ordinary moments into something memorable, on any device.</p><p>Act fast: limited time, unlimited value.</p></div>
+</div>
+</div></section>
+
+<section class="soft"><div class="w">
+<div class="head"><h2>Why Staqo feels different 🌍</h2>
+<p>We are a well-respected name for people who want to enjoy the online world without worry. Here is what that looks like.</p></div>
+<div class="list">
+<div><h3>🍀 New chapter of luck begins now</h3><p>Start fresh with better habits and better tools.</p></div>
+<div><h3>🌐 Anytime, Anywhere, Anything</h3><p>Access your account from any device, with the same protection everywhere.</p></div>
+<div><h3>⏳ Don't wait: your future starts now</h3><p>Ten minutes of setup today can prevent months of trouble later.</p></div>
+<div><h3>🤝 Real people, real help</h3><p>Friendly support answers questions in plain language.</p></div>
+</div>
+</div></section>
+
+<section id="guide"><div class="w">
+<div class="head"><p class="m">📖 Staqo guide · 6 min read</p><h2>Stay safe online: five simple steps</h2>
+<p>Most online problems come from a few common mistakes. The fixes are simple, and you can do most of them in one afternoon.</p></div>
+<div class="steps">
+<div class="st"><span class="n">1</span><h3>🔑 Use strong, unique passwords</h3><p>Reusing one password means a single leak can expose everything. Use a long passphrase for each account and let a reputable password manager remember them.</p></div>
+<div class="st"><span class="n">2</span><h3>📲 Turn on two-step sign-in</h3><p>It adds a second check after your password. An authenticator app is generally safer than text messages. Start with email, banking and social accounts.</p></div>
+<div class="st"><span class="n">3</span><h3>🎣 Learn to spot phishing</h3><p>Scam messages create urgency, ask for codes or contain links that do not match the real site. When unsure, open the official app or type the address yourself.</p></div>
+<div class="st"><span class="n">4</span><h3>🔄 Keep everything updated</h3><p>Updates fix security holes attackers already know about. Turn on automatic updates for your phone, computer and apps.</p></div>
+<div class="st"><span class="n">5</span><h3>💾 Back up what matters</h3><p>Keep important files in more than one place, such as a cloud service and an external drive, so a lost device is an inconvenience, not a disaster.</p></div>
+<div class="st tk"><h3>🛡️ Quick takeaways</h3><ul><li>One password per account</li><li>Two-step sign-in on key accounts</li><li>Pause before you click</li><li>No genuine company asks for your codes</li></ul></div>
+</div>
+<div class="dd">
+<div class="do"><h3>✅ Do</h3><ul><li>Use a password manager</li><li>Enable two-step sign-in</li><li>Check website addresses</li><li>Install updates promptly</li></ul></div>
+<div class="dont"><h3>❌ Avoid</h3><ul><li>Sharing one-time codes</li><li>Clicking links in urgent messages</li><li>Reusing passwords</li><li>Ignoring update reminders</li></ul></div>
+</div>
+</div></section>
+
+<section class="soft" id="threats"><div class="w">
+<div class="head"><h2>Scam checker: what it looks like and what to do 🔍</h2></div>
+<div class="sc4">
+<div class="sc"><h3>📧 Phishing email</h3><p><b>Looks like:</b> an urgent warning with a link to "verify" your account.</p><p class="go">Go to the official site directly and check there.</p></div>
+<div class="sc"><h3>🎁 Fake prize message</h3><p><b>Looks like:</b> you "won" something you never entered for.</p><p class="go">Delete it. Real prizes do not ask for fees.</p></div>
+<div class="sc"><h3>📞 Impersonation call</h3><p><b>Looks like:</b> a caller claims to be your bank and asks for a code.</p><p class="go">Hang up and call the number on your card or official site.</p></div>
+<div class="sc"><h3>🛒 Fake shop</h3><p><b>Looks like:</b> prices far below normal and no clear contact details.</p><p class="go">Check reviews and use trusted payment methods.</p></div>
+</div>
+</div></section>
+
+<section id="proof"><div class="w">
+<div class="head c"><h2>Join thousands already making the switch 💬</h2>
+<p>People choose Staqo because it feels good to use and gives them peace of mind. Enjoy a Breathtaking Experience while staying in control of your data.</p></div>
+<div class="tri">
+<div><b>🔒</b><h3>Protected by design</h3><p>Encryption and two-step sign-in come as standard.</p></div>
+<div><b>🎉</b><h3>Fun that lasts</h3><p>Games, challenges and events keep every visit fresh.</p></div>
+<div><b>🤝</b><h3>Help when needed</h3><p>Friendly support answers in plain language.</p></div>
+</div></div></section>
+
+<section class="soft" id="faq"><div class="w faq">
+<div class="fq"><h2>Frequently asked questions ❓</h2><p>Can't find your answer? Our support team replies in plain language.</p></div>
+<div>
+<details><summary>Is it free to create an account?</summary><p>Yes. You can sign up and explore for free before choosing anything paid.</p></details>
+<details><summary>How is my data protected?</summary><p>We use encryption, offer two-step sign-in and give you clear controls over what you share.</p></details>
+<details><summary>What if I think I clicked a scam link?</summary><p>Change the affected passwords, turn on two-step sign-in, and contact the service or your bank if money or data is involved.</p></details>
+<details><summary>Can I use it on my phone?</summary><p>Yes. It works on phones, tablets and computers with the same protection.</p></details>
+</div></div></section>
+
+<section class="cta"><div class="w">
+<h2>Your future starts now with Staqo 🚀</h2>
+<p>Create a free account and unlock exclusive member benefits. Try it out today and you'll never be disappointed.</p>
+<p class="lm">Act fast: limited time, unlimited value.</p>
+</div></section>
+
+<footer><div class="w"><span>© 2026 Staqo. Online Adventures Platform.</span><span>Designed for dreamers, built for doers.</span></div></footer>
+</div>
