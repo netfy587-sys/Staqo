@@ -1,71 +1,101 @@
-<!-- STAQO LANDING PAGE: paste into an Elementor "HTML" widget -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staqo: fun, safe and secure online adventures</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;800&display=swap');
-.sq{--ink:#111;--y:#ffd23f;--p:#ff6ba6;--m:#7ee8c5;--alt:#f1eefe;--mut:#4a4658;background:#fff;color:var(--ink);font:500 17px/1.7 Manrope,system-ui,sans-serif;overflow:hidden}
-.sq *,.sq *::before,.sq *::after{box-sizing:border-box}
-.sq h1,.sq h2,.sq h3{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;line-height:1.05;margin:0 0 .5em;color:var(--ink);letter-spacing:-.02em}
-.sq h1{font-size:clamp(2.6rem,7vw,5rem)}.sq h2{font-size:clamp(2rem,4.4vw,3.2rem)}.sq h3{font-size:1.3rem}
-.sq p{margin:0 0 1em}.sq a{color:inherit}
-.sq .w{max-width:1100px;margin:0 auto;padding:0 20px}
-.sq .bx{border:3px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 var(--ink);background:#fff}
-.sq .top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.sq .logo{font:700 1.8rem 'Space Grotesk',sans-serif;text-decoration:none;background:var(--ink);color:var(--y);padding:2px 14px;border-radius:12px;transform:rotate(-2deg);display:inline-block}
-.sq nav{display:flex;gap:10px}.sq nav a{text-decoration:none;font-weight:800;font-size:.9rem;border:2px solid var(--ink);border-radius:99px;padding:6px 16px;background:#fff}
-@media(max-width:800px){.sq nav{display:none}}
-.sq .hero{background:var(--y);border-bottom:3px solid var(--ink);padding-bottom:70px}
-.sq .hg{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding-top:30px}
-.sq .kick{display:inline-block;background:var(--ink);color:#fff;border-radius:99px;padding:6px 16px;font-weight:800;font-size:.95rem;margin-bottom:18px}
-.sq .hero p{font-size:1.2rem;max-width:52ch}
-.sq .stk{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.sq .stk span{border:3px solid var(--ink);border-radius:99px;padding:6px 16px;font-weight:800;background:#fff;box-shadow:3px 3px 0 var(--ink)}
-.sq .stk span:nth-child(2){background:var(--p);transform:rotate(-2deg)}.sq .stk span:nth-child(3){background:var(--m);transform:rotate(1.5deg)}
-.sq svg{width:100%;height:auto;display:block}
-@media(max-width:860px){.sq .hg,.sq .tw3,.sq .chap,.sq .fl{grid-template-columns:1fr!important}}
-.sq .rib{background:var(--ink);color:var(--y);text-align:center;padding:16px 20px;font:700 clamp(1.1rem,2.6vw,1.6rem) 'Space Grotesk',sans-serif;transform:rotate(-1deg);margin:-20px -10px 0;position:relative;z-index:2}
-.sq section{padding:90px 0}.sq .alt{background:var(--alt)}
-.sq .head{max-width:760px;margin-bottom:40px}.sq .head p{color:var(--mut);font-size:1.1rem}
-.sq .tw3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.sq .pc{padding:28px}.sq .pc:nth-child(1){background:var(--p);transform:rotate(-1.5deg)}.sq .pc:nth-child(2){background:var(--m);transform:rotate(1deg)}.sq .pc:nth-child(3){background:var(--y);transform:rotate(-.8deg)}
-.sq .pc .ic{font-size:2.6rem;display:block;margin-bottom:10px}.sq .pc p{margin:0 0 .8em}.sq .pc p:last-child{margin:0}
-.sq .fl{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px}
-.sq .fl div{display:flex;gap:14px;padding:18px 0;border-top:3px solid var(--ink)}
-.sq .fl .e{font-size:1.8rem;line-height:1}.sq .fl p{margin:0;color:var(--mut)}
-.sq .chap{display:grid;grid-template-columns:1fr 2fr;gap:44px;align-items:start}
-.sq .stick{position:sticky;top:20px}
-.sq .rows>div{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:22px 0;border-top:3px solid var(--ink)}
-.sq .rows>div:last-child{border-bottom:3px solid var(--ink)}
-.sq .num{font:700 3rem/1 'Space Grotesk',sans-serif;color:var(--p);-webkit-text-stroke:2px var(--ink)}
-.sq .rows p{margin:0;color:var(--mut)}
-.sq .tk{background:var(--y);padding:24px;margin-top:30px}.sq .tk ul{margin:0;padding-left:1.1em}.sq .tk li{margin-bottom:.4em}
-.sq .ck{padding:24px;margin-top:26px;background:var(--m)}
-.sq .ck label{display:flex;gap:12px;align-items:center;padding:8px 0;cursor:pointer;font-weight:800}
-.sq .ck input{width:22px;height:22px;accent-color:var(--ink)}
-.sq .ck input:checked+span{text-decoration:line-through;opacity:.55}
-.sq .flag{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;gap:16px;padding:20px 0;border-top:3px solid var(--ink);align-items:start}
-.sq .flag:last-child{border-bottom:3px solid var(--ink)}
-.sq .flag h3{margin:0}.sq .flag p{margin:0}
-.sq .red,.sq .grn{border:2px solid var(--ink);border-radius:14px;padding:12px 14px;font-weight:600}
-.sq .red{background:#ffe1ec}.sq .grn{background:#d8f7ec}
-.sq .red b,.sq .grn b{display:block;font:700 .85rem 'Space Grotesk',sans-serif;margin-bottom:2px}
-@media(max-width:860px){.sq .flag{grid-template-columns:1fr}}
-.sq .join{background:var(--p);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
-.sq .join .head p{color:var(--ink)}
-.sq .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.sq .tri div{padding:24px;background:#fff}.sq .tri b{font-size:2.2rem;display:block}.sq .tri p{margin:0;color:var(--mut)}
-@media(max-width:860px){.sq .tri{grid-template-columns:1fr}}
-.sq details{border:3px solid var(--ink);border-radius:16px;background:#fff;padding:16px 22px;margin-bottom:14px;box-shadow:4px 4px 0 var(--ink)}
-.sq summary{cursor:pointer;font:700 1.15rem 'Space Grotesk',sans-serif}.sq details p{margin:10px 0 0;color:var(--mut)}
-.sq .cta{background:var(--m);border-top:3px solid var(--ink);text-align:center}
-.sq .cta h2{max-width:16ch;margin:0 auto .4em}.sq .cta p{max-width:54ch;margin:0 auto 1em;font-size:1.15rem}
-.sq .cta .lm{display:inline-block;background:var(--ink);color:var(--y);border-radius:99px;padding:8px 22px;font-weight:800;margin:0}
-.sq footer{background:var(--ink);color:#d8d4e4;padding:26px 0;font-size:.9rem}
-.sq footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+*,*::before,*::after{box-sizing:border-box}
+:root{--ink:#111;--y:#ffd23f;--p:#ff6ba6;--m:#7ee8c5;--alt:#f1eefe;--mut:#4a4658}
+body{margin:0;background:#fff;color:var(--ink);font:500 17px/1.7 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;line-height:1.05;margin:0 0 .5em;color:var(--ink);letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,7vw,5rem)}
+h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em}
+a{color:inherit}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+.bx{border:3px solid var(--ink);border-radius:20px;box-shadow:6px 6px 0 var(--ink);background:#fff}
+.band{background:var(--y)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:16px}
+.logo{font:700 1.8rem 'Space Grotesk',sans-serif;background:var(--ink);color:var(--y);padding:2px 14px;border-radius:12px;transform:rotate(-2deg);display:inline-block}
+.menu{display:flex;gap:10px}
+.menu a{text-decoration:none;font-weight:800;font-size:.9rem;border:2px solid var(--ink);border-radius:99px;padding:6px 16px;background:#fff}
+.hero{background:var(--y);border-bottom:3px solid var(--ink);padding-bottom:70px}
+.hg{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding-top:30px}
+.kick{display:inline-block;background:var(--ink);color:#fff;border-radius:99px;padding:6px 16px;font-weight:800;font-size:.95rem;margin-bottom:18px}
+.hero p{font-size:1.2rem;max-width:52ch}
+.stk{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.stk span{border:3px solid var(--ink);border-radius:99px;padding:6px 16px;font-weight:800;background:#fff;box-shadow:3px 3px 0 var(--ink)}
+.stk span:nth-child(2){background:var(--p);transform:rotate(-2deg)}
+.stk span:nth-child(3){background:var(--m);transform:rotate(1.5deg)}
+svg{width:100%;height:auto;display:block}
+.rib{background:var(--ink);color:var(--y);text-align:center;padding:16px 20px;font:700 clamp(1.1rem,2.6vw,1.6rem) 'Space Grotesk',sans-serif;transform:rotate(-1deg);margin:-20px -10px 0;position:relative;z-index:2}
+section{padding:90px 0}
+.alt{background:var(--alt)}
+.head{max-width:760px;margin-bottom:40px}
+.head p{color:var(--mut);font-size:1.1rem}
+.tw3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.pc{padding:28px}
+.pc:nth-child(1){background:var(--p);transform:rotate(-1.5deg)}
+.pc:nth-child(2){background:var(--m);transform:rotate(1deg)}
+.pc:nth-child(3){background:var(--y);transform:rotate(-.8deg)}
+.pc .ic{font-size:2.6rem;display:block;margin-bottom:10px}
+.pc p{margin:0 0 .8em}
+.pc p:last-child{margin:0}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px}
+.fl div{display:flex;gap:14px;padding:18px 0;border-top:3px solid var(--ink)}
+.fl .e{font-size:1.8rem;line-height:1}
+.fl p{margin:0;color:var(--mut)}
+.chap{display:grid;grid-template-columns:1fr 2fr;gap:44px;align-items:start}
+.stick{position:sticky;top:20px}
+.rows>div{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:22px 0;border-top:3px solid var(--ink)}
+.rows>div:last-child{border-bottom:3px solid var(--ink)}
+.num{font:700 3rem/1 'Space Grotesk',sans-serif;color:var(--p);-webkit-text-stroke:2px var(--ink)}
+.rows p{margin:0;color:var(--mut)}
+.tk{background:var(--y);padding:24px;margin-top:30px}
+.tk ul{margin:0;padding-left:1.1em}
+.tk li{margin-bottom:.4em}
+.ck{padding:24px;margin-top:26px;background:var(--m)}
+.ck label{display:flex;gap:12px;align-items:center;padding:8px 0;cursor:pointer;font-weight:800}
+.ck input{width:22px;height:22px;accent-color:var(--ink)}
+.ck input:checked+span{text-decoration:line-through;opacity:.55}
+.flag{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;gap:16px;padding:20px 0;border-top:3px solid var(--ink);align-items:start}
+.flag:last-child{border-bottom:3px solid var(--ink)}
+.flag h3{margin:0}
+.flag p{margin:0}
+.red,.grn{border:2px solid var(--ink);border-radius:14px;padding:12px 14px;font-weight:600}
+.red{background:#ffe1ec}
+.grn{background:#d8f7ec}
+.red b,.grn b{display:block;font:700 .85rem 'Space Grotesk',sans-serif;margin-bottom:2px}
+.join{background:var(--p);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.join .head p{color:var(--ink)}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tri div{padding:24px;background:#fff}
+.tri b{font-size:2.2rem;display:block}
+.tri p{margin:0;color:var(--mut)}
+details{border:3px solid var(--ink);border-radius:16px;background:#fff;padding:16px 22px;margin-bottom:14px;box-shadow:4px 4px 0 var(--ink)}
+summary{cursor:pointer;font:700 1.15rem 'Space Grotesk',sans-serif}
+details p{margin:10px 0 0;color:var(--mut)}
+.cta{background:var(--m);border-top:3px solid var(--ink);text-align:center}
+.cta h2{max-width:16ch;margin:0 auto .4em}
+.cta p{max-width:54ch;margin:0 auto 1em;font-size:1.15rem}
+.cta .lm{display:inline-block;background:var(--ink);color:var(--y);border-radius:99px;padding:8px 22px;font-weight:800;margin:0}
+footer{background:var(--ink);color:#d8d4e4;padding:26px 0;font-size:.9rem}
+footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:860px){.hg,.tw3,.chap,.fl,.flag,.tri{grid-template-columns:1fr!important}}
+@media(max-width:800px){.menu{display:none}}
 </style>
+</head>
+<body>
+<div class="band">
+<div class="w">
+<nav><span class="logo">Staqo</span><span class="menu"><a href="#promise">Why us</a><a href="#guide">Safety guide</a><a href="#scams">Scam checker</a><a href="#faq">FAQ</a></span></nav>
+</div>
+</div>
 
-<div class="sq" id="top">
-<div class="hero">
-<div class="w top"><a class="logo" href="#top">Staqo</a>
-<nav><a href="#promise">Why us</a><a href="#guide">Safety guide</a><a href="#scams">Scam checker</a><a href="#faq">FAQ</a></nav></div>
+<header class="hero">
 <div class="w hg">
 <div>
 <span class="kick">✨ Creating a Magical Atmosphere</span>
@@ -82,7 +112,8 @@
 <path d="M180 210 l24 24 l44 -50" stroke="#111" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-6 215 205)"/>
 <path d="M335 120 l12 12 l22 -26" stroke="#111" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-</div></div>
+</div>
+</header>
 <div class="rib">Discover the perfect blend of quality and value.</div>
 
 <section id="promise"><div class="w">
@@ -151,4 +182,5 @@
 </div></section>
 
 <footer><div class="w"><span>© 2026 Staqo. Online Adventures Platform.</span><span>Designed for dreamers, built for doers.</span></div></footer>
-</div>
+</body>
+</html>
